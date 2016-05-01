@@ -90,6 +90,12 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 
 	private function _parse_wc_list( $body ) {
 		$camp_list = json_decode( $body , true );
+		$camp_list = $this->_pick_start_date( $camp_list );
+		$camp_list = $this->_sort_by_date( $camp_list );
+		return $camp_list;
+	}
+
+	private function _pick_start_date( $camp_list ) {
 		foreach ( $camp_list as $key => $camp ) {
 			foreach ( $camp['post_meta'] as $meta ) {
 				if ( 'Start Date (YYYY-mm-dd)' === $meta['key'] ) {
@@ -102,7 +108,6 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 				}
 			}
 		}
-		$camp_list = $this->_sort_by_date( $camp_list );
 		return $camp_list;
 	}
 

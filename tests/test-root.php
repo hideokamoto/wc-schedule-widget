@@ -120,6 +120,40 @@ class WidgetTest extends WP_UnitTestCase {
 		$this->assertEquals( $res[0]['id'], 1 );
 	}
 
+	function test_add_param_to_pick_start_date() {
+		$method = $this->create_reflection_mothod( '_pick_start_date' );
+		$dummy = [
+			array(
+				'id' => 2,
+				'post_meta' => [
+					array(
+						'key' => 'Start Date (YYYY-mm-dd)',
+						'value' => 9999999999,
+					),
+				],
+			),
+		];
+		$res = $method->invoke( $this->widget, $dummy );
+		$this->assertEquals( $res[0]['start_datetime'], 9999999999 );
+	}
+
+	function test_remove_ended_camp_to_pick_start_date() {
+		$method = $this->create_reflection_mothod( '_pick_start_date' );
+		$dummy = [
+			array(
+				'id' => 2,
+				'post_meta' => [
+					array(
+						'key' => 'Start Date (YYYY-mm-dd)',
+						'value' => 0000000000,
+					),
+				],
+			),
+		];
+		$res = $method->invoke( $this->widget, $dummy );
+		$this->assertEmpty( $res );
+	}
+
 	function create_reflection_mothod( $mothod_name ) {
 		$reflection = new \ReflectionClass( $this->widget );
 		$method = $reflection->getMethod( $mothod_name );
