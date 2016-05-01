@@ -20,20 +20,24 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 		$camp_list = $this->_get_wordcamp_list();
 
 		$html .= "<ul id='wc-scheduler-postlist'>";
-		$i = 1;
-		foreach ( $camp_list as $camp ) {
-			$link = $camp['link'];
-			$html .= '<li><dl>';
-			$html .= '<dt>Title</dt>';
-			$html .= "<dd>{$camp['title']}</dd>";
-			$html .= $this->_get_post_meta_html( $camp['post_meta'] );
-			$html .= '<dt>Site URL</dt>';
-			$html .= "<dd><a href='{$link}' target='_blank'>{$link}</a></dd>";
-			$html .= '</dl></li>';
-			if ( $instance['count'] !== '-1' && (int) $instance['count'] == $i ) {
-				break;
+		if ( ! is_array( $camp_list ) ) {
+			$html .= "<li>{$camp_list}</li>";
+		} else {
+			$i = 1;
+			foreach ( $camp_list as $camp ) {
+				$link = $camp['link'];
+				$html .= '<li><dl>';
+				$html .= '<dt>Title</dt>';
+				$html .= "<dd>{$camp['title']}</dd>";
+				$html .= $this->_get_post_meta_html( $camp['post_meta'] );
+				$html .= '<dt>Site URL</dt>';
+				$html .= "<dd><a href='{$link}' target='_blank'>{$link}</a></dd>";
+				$html .= '</dl></li>';
+				if ( $instance['count'] !== '-1' && (int) $instance['count'] == $i ) {
+					break;
+				}
+				$i++;
 			}
-			$i++;
 		}
 		$html .= '</ul>';
 		echo $html. $args['after_widget'];
