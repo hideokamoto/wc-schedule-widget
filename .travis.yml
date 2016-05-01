@@ -1,23 +1,26 @@
 language: php
 
 notifications:
-  email:
-    on_success: never
-    on_failure: change
+  on_success: never
+  on_failure: change
 
 php:
-  - 5.3
   - 5.6
-
-env:
-  - WP_VERSION=latest WP_MULTISITE=0
-  - WP_VERSION=3.0.1 WP_MULTISITE=0
-  - WP_VERSION=3.4 WP_MULTISITE=0
+  - 7
+  - hhvm
 
 matrix:
   include:
-    - php: 5.3
-      env: WP_VERSION=latest WP_MULTISITE=1
+    - php: 5.6
+      env: WP_VERSION=latest WP_MULTISITE=0 WP_PULUGIN_DEPLOY=1
+    - php: 7
+      env: WP_VERSION=nightly WP_MULTISITE=0
+    - php: hhvm
+      env: WP_VERSION=latest WP_MULTISITE=0 WP_PULUGIN_DEPLOY=1
+env:
+  matrix:
+    - WP_VERSION=latest WP_MULTISITE=0
+    - WP_VERSION=4.4 WP_MULTISITE=0
 
 before_script:
   - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
