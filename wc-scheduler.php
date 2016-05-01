@@ -6,7 +6,7 @@
  * Author: hideokamoto
  * Author URI: https://profiles.wordpress.org/hideokamoto
  * Plugin URI: https://github.com/hideokamoto/wc-schedule-widget
- * Text Domain: wc-schedule-widget
+ * Text Domain: wc-scheduler
  * Domain Path: /languages
  * @package Wc-scheduler
  */
