@@ -10,4 +10,9 @@ class WidgetTest extends WP_UnitTestCase {
 		$this->assertInstanceOf( 'WordCamp_Scheduler_Widget', $this->widget );
 	}
 
+	function test_constructor() {
+		$this->assertEquals( 'WordCamp Schedule List Widget', $this->widget->name );
+		$this->assertEquals( 'WordCamp List', $this->widget->widget_options['description'] );
+	}
+
 }
