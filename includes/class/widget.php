@@ -39,35 +39,40 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 		echo $html. $args['after_widget'];
 	}
 
+	private function _get_dl_data_from_post_meta( $post_meta ) {
+		switch ( $post_meta['key'] ) {
+			case 'Start Date (YYYY-mm-dd)':
+			case 'End Date (YYYY-mm-dd)':
+				$data['key'] = explode( '(YYYY-mm-dd)', $post_meta['key'] )[0];
+				$data['value'] = date('Y-m-d', (int) $post_meta['value'] );
+				break;
+
+			case 'URL':
+				$data['key'] = 'WordCamp URL';
+				$url = esc_url( $post_meta['value'] );
+				$data['value'] = "<a href='{$url}' target='_blank'>{$url}</a>";
+				break;
+
+			case 'Website URL':
+				$data['key'] = 'Venue Website URL';
+				$url = esc_url( $post_meta['value'] );
+				$data['value'] = "<a href='{$url}' target='_blank'>{$url}</a>";
+				break;
+
+			default:
+				$data['key'] = $post_meta['key'];
+				$data['value'] = $post_meta['value'];
+				break;
+		}
+		return $data;
+	}
+
 	private function _get_post_meta_html( $meta_list ) {
 		$html = '';
 		foreach ( $meta_list as $post_meta ) {
-			switch ( $post_meta['key'] ) {
-				case 'Start Date (YYYY-mm-dd)':
-				case 'End Date (YYYY-mm-dd)':
-					$key = explode( '(YYYY-mm-dd)', $post_meta['key'] )[0];
-					$value = date('Y-m-d', (int) $post_meta['value'] );
-					break;
-
-				case 'URL':
-					$key = 'WordCamp URL';
-					$url = esc_url( $post_meta['value'] );
-					$value = "<a href={$url} target='_blank'>{$url}</a>";
-					break;
-
-				case 'Website URL':
-					$key = 'Venue Website URL';
-					$url = esc_url( $post_meta['value'] );
-					$value = "<a href={$url} target='_blank'>{$url}</a>";
-					break;
-
-				default:
-					$key = $post_meta['key'];
-					$value = $post_meta['value'];
-					break;
-			}
-			$html .= "<dt>{$key}</dt>";
-			$html .= "<dd>{$value}</dd>";
+			$data = $this->_get_dl_data_from_post_meta( $post_meta );
+			$html .= "<dt>{$data['key']}</dt>";
+			$html .= "<dd>{$data['value']}</dd>";
 		}
 		return $html;
 }
