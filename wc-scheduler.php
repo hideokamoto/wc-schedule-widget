@@ -5,7 +5,7 @@
  * Description: Show WordCamp Event List Widget
  * Author: hideokamoto
  * Author URI: https://profiles.wordpress.org/hideokamoto
- * Plugin URI: https://github.com/hideokamoto/wc-schedule-sidget
+ * Plugin URI: https://github.com/hideokamoto/wc-schedule-widget
  * Text Domain: wc-schedule-widget
  * Domain Path: /languages
  * @package Wc-scheduler
