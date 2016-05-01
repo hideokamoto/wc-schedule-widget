@@ -4,8 +4,8 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'WordCamp_Scheduler_Widget',
-			__( 'WordCamp Schedule List Widget', 'wc-schedule-widget' ),
-			array( 'description' => __( 'WordCamp List', 'wc-schedule-widget' ), )
+			__( 'WordCamp Schedule List Widget', 'wc-scheduler' ),
+			array( 'description' => __( 'WordCamp List', 'wc-scheduler' ), )
 		);
 	}
 
@@ -19,7 +19,7 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 		}
 		$camp_list = $this->_get_wordcamp_list();
 
-		$html .= "<ul id='wc-schedule-widget-postlist' >";
+		$html .= "<ul id='wc-scheduler-postlist' >";
 		$i = 1;
 		foreach ( $camp_list as $camp ) {
 			$link = $camp['link'];
@@ -103,13 +103,13 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'WordCamp Schedule List Widget', 'wc-schedule-widget' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'WordCamp Schedule List Widget', 'wc-scheduler' );
 		$count = ! empty( $instance['count'] ) ? $instance['count'] : -1;
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Widget Title:' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Widget Title:', 'wc-scheduler' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-		<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Show Count', 'wc-schedule-widget' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Show Count', 'wc-scheduler', 'wc-scheduler' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>">
 		</p>
 		<?php
