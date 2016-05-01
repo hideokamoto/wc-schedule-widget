@@ -19,14 +19,14 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 		}
 		$camp_list = $this->_get_wordcamp_list();
 
-		$html .= "<ul id='wc-scheduler-postlist' >";
+		$html .= "<ul id='wc-scheduler-postlist'>";
 		$i = 1;
 		foreach ( $camp_list as $camp ) {
 			$link = $camp['link'];
 			$html .= '<li><dl>';
 			$html .= '<dt>Title</dt>';
 			$html .= "<dd>{$camp['title']}</dd>";
-			$html .= $this->_get_post_meta_html( $camp['post_meta']);
+			$html .= $this->_get_post_meta_html( $camp['post_meta'] );
 			$html .= '<dt>Site URL</dt>';
 			$html .= "<dd><a href='{$link}' target='_blank'>{$link}</a></dd>";
 			$html .= '</dl></li>';
@@ -102,7 +102,12 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 				}
 			}
 		}
-		$date_list = array_column($camp_list,'start_datetime');
+		$camp_list = $this->_sort_by_date( $camp_list );
+		return $camp_list;
+	}
+
+	private function _sort_by_date( $camp_list ) {
+		$date_list = array_column( $camp_list,'start_datetime' );
 		array_multisort( $date_list, SORT_ASC, $camp_list );
 		return $camp_list;
 	}

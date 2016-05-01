@@ -102,11 +102,110 @@ class WidgetTest extends WP_UnitTestCase {
 		$this->assertEquals( $res, $expect );
 	}
 
+	function test_sort_by_date() {
+		$method = $this->create_reflection_mothod( '_sort_by_date' );
+
+		$dummy = [
+			array(
+				'id' => 2,
+				'start_datetime' => "1462579500",
+			),
+			array(
+				'id' => 1,
+				'start_datetime' => "1462579200",
+			),
+		];
+		$this->assertEquals( $dummy[0]['id'], 2 );
+		$res = $method->invoke( $this->widget, $dummy );
+		$this->assertEquals( $res[0]['id'], 1 );
+	}
+
 	function create_reflection_mothod( $mothod_name ) {
 		$reflection = new \ReflectionClass( $this->widget );
 		$method = $reflection->getMethod( $mothod_name );
 		$method->setAccessible( true );
 		return $method;
 	}
+
+		function create_dummy_post_meta() {
+			$array = [
+				array(
+					'ID' => 42508216,
+					'key' => "Venue Name",
+					'value' => "Innovation Centre",
+				),
+				array(
+					'ID' => 42508217,
+					'key' => "Physical Address",
+					'value' => "Innovation Centre Sunshine Coast",
+				),
+				array(
+				    'ID' => 42508218,
+				    'key' => "Maximum Capacity",
+				    'value' => "500",
+				),
+				array(
+				    'ID' =>42508219,
+				    'key' => "Available Rooms",
+				    'value' => "2",
+				),
+				array(
+				    'ID' => 42508220,
+				    'key' => "Website URL",
+				    'value' => "https://innovationcentre.com.au/",
+				),
+				array(
+				    'ID' => 42508222,
+				    'key' => "Exhibition Space Available",
+				    'value' => "",
+				),
+				array(
+				    'ID' => 42508170,
+				    'key' => "Start Date (YYYY-mm-dd)",
+				    'value' => "1462579200",
+				),
+				array(
+				    'ID' => 42508171,
+				    'key' => "End Date (YYYY-mm-dd)",
+				    'value' => "1462665600",
+				),
+				array(
+				    'ID' => 42508172,
+				    'key' => "Location",
+				    'value' => "Sunshine Coast, QLD, Australia",
+				),
+				array(
+				    'ID' => 42508173,
+				    'key' => "URL",
+				    'value' => "https://2016.sunshinecoast.wordcamp.org",
+				),
+				array(
+				    'ID' => 42508175,
+				    'key' => "Twitter",
+				    'value' => "@WCSunshineCoast",
+				),
+				array(
+				    'ID' => 42508176,
+				    'key' =>"WordCamp Hashtag",
+				    'value' =>"#WordCampSC",
+				),
+				array(
+				    'ID' => 42508177,
+				    'key' => "Number of Anticipated Attendees",
+				    'value' => "360",
+				),
+				array(
+				    'ID' => 42508179,
+				    'key' => "Organizer Name",
+				    'value' => "Luke Carbis",
+				),
+				array(
+				    'ID' => 42508180,
+				    'key' => "WordPress.org Username",
+				    'value' => "lukecarbis",
+			 	),
+			];
+			return $array;
+		}
 
 }
