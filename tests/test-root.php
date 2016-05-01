@@ -22,7 +22,7 @@ class WidgetTest extends WP_UnitTestCase {
 		$res = $method->invoke( $this->widget );
 	}
 
-	function test_get_basic_post_meta() {
+	function test_basic_get_dl_data_from_post_meta() {
 		$method = $this->create_reflection_mothod( '_get_dl_data_from_post_meta' );
 
 		$dummy = array(
@@ -38,7 +38,7 @@ class WidgetTest extends WP_UnitTestCase {
 		$this->assertEquals( $res, $expect );
 	}
 
-	function test_get_url_post_meta() {
+	function test_url_get_dl_data_from_post_meta() {
 		$method = $this->create_reflection_mothod( '_get_dl_data_from_post_meta' );
 
 		$dummy = array(
@@ -54,7 +54,7 @@ class WidgetTest extends WP_UnitTestCase {
 		$this->assertEquals( $res, $expect );
 	}
 
-	function test_get_website_url_post_meta() {
+	function test_website_get_dl_data_from_post_meta() {
 		$method = $this->create_reflection_mothod( '_get_dl_data_from_post_meta' );
 
 		$dummy = array(
@@ -70,7 +70,7 @@ class WidgetTest extends WP_UnitTestCase {
 		$this->assertEquals( $res, $expect );
 	}
 
-	function test_get_start_date_post_meta() {
+	function test_start_get_dl_data_from_post_meta() {
 		$method = $this->create_reflection_mothod( '_get_dl_data_from_post_meta' );
 
 		$dummy = array(
@@ -86,7 +86,7 @@ class WidgetTest extends WP_UnitTestCase {
 		$this->assertEquals( $res, $expect );
 	}
 
-	function test_get_end_date_post_meta() {
+	function test_end_date_get_dl_data_from_post_meta() {
 		$method = $this->create_reflection_mothod( '_get_dl_data_from_post_meta' );
 
 		$dummy = array(
@@ -108,4 +108,5 @@ class WidgetTest extends WP_UnitTestCase {
 		$method->setAccessible( true );
 		return $method;
 	}
+
 }
