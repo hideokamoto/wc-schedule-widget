@@ -1,5 +1,5 @@
 # WC Schedule Widget #
-[![Build Status](https://travis-ci.org/hideokamoto/wc-schedule-widget.svg?branch=master)](https://travis-ci.org/hideokamoto/wc-schedule-widget)
+[![Build Status](https://travis-ci.org/hideokamoto/wc-schedule-widget.svg?branch=master)](https://travis-ci.org/hideokamoto/wc-schedule-widget)  
 **Contributors:** hideokamoto  
 **Tags:** widget,wordcamp  
 **Requires at least:** 4.4.2  
@@ -13,6 +13,10 @@ Show WordCamp Event List Widget.
 
 ## Description ##
 Show WordCamp Event List Widget.
+
+## Screenshot ##
+![setting](./includes/img/setting.png)  
+![view](./includes/img/view.png)
 
 ## Installation ##
 
