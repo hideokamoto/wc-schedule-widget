@@ -12,6 +12,10 @@ Show WordCamp Event List Widget.
 == Description ==
 Show WordCamp Event List Widget.
 
+== License ==
+The exceptions to this license are as follows:
+- [array_column() for PHP](https://github.com/ramsey/array_column) is licensed under MIT
+
 == Installation ==
 
 1. Upload `wc-schedule-widget.zip` to the `/wp-content/plugins/` directory
@@ -21,10 +25,13 @@ Show WordCamp Event List Widget.
 
 == Changelog ==
 
+= 0.2.0 =
+* Support PHP 5.4
+
 = 0.1.0 =
 * Release
 
 == Upgrade Notice ==
 
-= 0.1.0 =
-* Release
+= 0.2.0 =
+* Support PHP 5.4
