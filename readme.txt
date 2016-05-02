@@ -12,6 +12,9 @@ Show WordCamp Event List Widget.
 == Description ==
 Show WordCamp Event List Widget.
 
+== Requirement ==
+PHP version 5.5 or greater
+
 == Installation ==
 
 1. Upload `wc-schedule-widget.zip` to the `/wp-content/plugins/` directory
