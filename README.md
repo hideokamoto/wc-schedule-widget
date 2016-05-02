@@ -2,7 +2,7 @@
 **Contributors:** hideokamoto  
 **Tags:** widget,wordcamp  
 **Requires at least:** 4.4.2  
-**Requires PHP Version:** 5.5.0 or greater
+**Requires PHP Version:** 5.5.0 or greater  
 **Tested up to:** 4.4.2  
 **Stable tag:** 0.1.0  
 **License:** GPLv2 or later  
