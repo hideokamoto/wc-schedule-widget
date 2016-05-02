@@ -15,8 +15,11 @@ Show WordCamp Event List Widget.
 Show WordCamp Event List Widget.
 
 ## Screenshot ##
-![setting](./includes/img/setting.png)  
+
+### Using sidebar widget ###
 ![view](./includes/img/view.png)
+### Widget setting ###
+![setting](./includes/img/setting.png)
 
 ## Installation ##
 
