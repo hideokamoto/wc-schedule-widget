@@ -3,9 +3,8 @@
 **Contributors:** hideokamoto  
 **Tags:** widget,wordcamp  
 **Requires at least:** 4.4.2  
-**Requires PHP Version:** 5.5.0 or greater  
 **Tested up to:** 4.4.2  
-**Stable tag:** 0.1.0  
+**Stable tag:** 0.2.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -28,12 +27,20 @@ Show WordCamp Event List Widget.
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. Place `WordCamp Scheduler Widget` in your site.
 
+
+## License ##
+The exceptions to this license are as follows:
+- [array_column() for PHP](https://github.com/ramsey/array_column) is licensed under MIT
+
 ## Changelog ##
+
+### 0.2.0 ###
+* Support PHP 5.4
 
 ### 0.1.0 ###
 * Release
 
 ## Upgrade Notice ##
 
-### 0.1.0 ###
-* Release
+### 0.2.0 ###
+* Support PHP 5.4
