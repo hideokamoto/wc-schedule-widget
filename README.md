@@ -2,6 +2,7 @@
 **Contributors:** hideokamoto  
 **Tags:** widget,wordcamp  
 **Requires at least:** 4.4.2  
+**Requires PHP Version:** 5.5.0 or greater
 **Tested up to:** 4.4.2  
 **Stable tag:** 0.1.0  
 **License:** GPLv2 or later  
@@ -11,9 +12,6 @@ Show WordCamp Event List Widget.
 
 ## Description ##
 Show WordCamp Event List Widget.
-
-## Requirement ##
-PHP version 5.5 or greater
 
 ## Installation ##
 
