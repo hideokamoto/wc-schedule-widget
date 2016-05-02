@@ -1,4 +1,5 @@
 # WC Schedule Widget #
+[![Build Status](https://travis-ci.org/hideokamoto/wc-schedule-widget.svg?branch=master)](https://travis-ci.org/hideokamoto/wc-schedule-widget)
 **Contributors:** hideokamoto  
 **Tags:** widget,wordcamp  
 **Requires at least:** 4.4.2  
