@@ -10,6 +10,10 @@ php:
   - 7
   - hhvm
 
+branches:
+  only:
+    - master
+
 env:
   matrix:
     - WP_VERSION=latest WP_MULTISITE=0
