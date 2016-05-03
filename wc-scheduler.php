@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WC Schedule Widget
- * Version: 0.2.0
+ * Version: 1.0.0
  * Description: Show WordCamp Event List Widget
  * Author: hideokamoto
  * Author URI: https://profiles.wordpress.org/hideokamoto

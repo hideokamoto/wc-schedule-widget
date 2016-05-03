@@ -239,10 +239,10 @@ class WordCamp_Scheduler_Widget extends WP_Widget {
 
 	private function _get_tags() {
 		$tags = array(
-	        "%camp_title%",
-	        "%start_date%",
-	        "%end_date%",
-	        "%url%",
+			"%camp_title%",
+			"%start_date%",
+			"%end_date%",
+			"%url%",
 			"%venue_name%",
 			"%address%",
 			"%capacity%",

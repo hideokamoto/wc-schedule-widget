@@ -3,7 +3,7 @@ Contributors: hideokamoto
 Tags: widget,wordcamp
 Requires at least: 4.4.2
 Tested up to: 4.4.2
-Stable tag: 0.1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ The exceptions to this license are as follows:
 
 == Changelog ==
 
+= 1.0.0 =
+* Enable Template Customizer
+
 = 0.2.0 =
 * Support PHP 5.4
 
@@ -33,5 +36,5 @@ The exceptions to this license are as follows:
 
 == Upgrade Notice ==
 
-= 0.2.0 =
-* Support PHP 5.4
+= 1.0.0 =
+* Enable Template Customizer
